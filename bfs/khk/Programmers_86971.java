@@ -30,7 +30,6 @@ class Programmers_86971 {
 			int cnt = 1;
 			int x = wires[i][0] - 1;
 			int y = wires[i][1] - 1;
-			int pastVal = map[x][y];
 			map[x][y] = 0; //전력망 해제
 			map[y][x] = 0;
 
@@ -55,8 +54,8 @@ class Programmers_86971 {
 			int left = n - cnt;
 			int diff = Math.abs(cnt - left);
 			min = Math.min(min, diff);
-			map[x][y] = pastVal; //전력망 연결
-			map[y][x] = pastVal;
+			map[x][y] = 1; //전력망 연결
+			map[y][x] = 1;
 		}
 
 		return min;
